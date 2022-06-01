@@ -41,8 +41,7 @@ public class CardTrickICE1 {
         System.out.println("1:hearts\n 2:diamonds\n 3:spades\n 4:clubs");
         
         int suitnum = scan.nextInt();
-        String suit;
-        suit = CallSuit(suitnum);
+        String suit = SelectSuit(suitnum);
         
         boolean match = true ;
         for(int i = 0; i < magicHand.length; i++)
@@ -65,11 +64,10 @@ public class CardTrickICE1 {
             System.out.println("Card not found");
         }
     }
-    public static String CallSuit(int a)
+    public static String SelectSuit(int a)
     {
         String suit= "";
-        int b =a;
-        switch(b)
+        switch(a)
         {
             case 1:
             suit= "hearts";
