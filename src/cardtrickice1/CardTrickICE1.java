@@ -7,7 +7,7 @@ import java.util.Scanner;
  * step 2: take any card input from user suit,number
  * step 3: user card is in  the array 'card is found'
  *
- * @author Svayam Modi
+ * @author KartikKumar Patel
  */
 public class CardTrickICE1 {
 
@@ -16,31 +16,36 @@ public class CardTrickICE1 {
      */
     public static void main(String[] args) 
     {
-        Scanner kb = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
+        
         Card[] magicHand = new Card[7]; //Array of object
         Card  luckyCard = new Card();
         luckyCard.setValue(6);
         luckyCard.setSuits("diamonds");
-        for( int i=0;i<magicHand.length;i++)
+        
+        for( int i = 0; i < magicHand.length; i++)
         {
-            Card c1 = new Card();
-            c1.setValue(Card.RandomValue());
-            c1.setSuits(Card.RandomSuit());
-            magicHand[i]= c1;
+            Card c = new Card();
+            c.setValue(Card.RandomValue());
+            c.setSuits(Card.RandomSuit());
+            magicHand[i]= c;
             System.out.println(magicHand[i].getValue() + " " + magicHand[i].getSuits());
             
         }
         
-        System.out.println("Enter the card number (1 to 12)");
-        int num = kb.nextInt();
+        System.out.println("Enter the card number 1 to 12");
+        
+        int num = scan.nextInt();
+        
         System.out.println("Choose the card suits: ");
-        System.out.println("1:hearts\n2:diamonds\n3:spades\n4:clubs");
-        int suitnum = kb.nextInt();
+        System.out.println("1:hearts\n 2:diamonds\n 3:spades\n 4:clubs");
+        
+        int suitnum = scan.nextInt();
         String suit;
         suit = CallSuit(suitnum);
         
         boolean match = true ;
-        for(int i =0; i < magicHand.length;i++)
+        for(int i = 0; i < magicHand.length; i++)
         {
             match = true;
             if((magicHand[i].getValue() == num) && (magicHand[i].getSuits().equals(suit)))
